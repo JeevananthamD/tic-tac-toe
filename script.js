@@ -4,6 +4,10 @@ function insertHtml(str, value) { // inserting buttons
     return str;
 }
 
+function restart() {
+    window.location.reload();
+}
+
 function check(buttons, count) { // checking for result
     let a = [];
     for(let i=0;i<9;i++) {
@@ -42,7 +46,7 @@ function check(buttons, count) { // checking for result
 // Inserting button html
 let html = "";
 for(let i=1;i<=9;i++) {
-    let str = '<button id="{{value}}"></button>';
+    let str = '<button id="{{value}}" class="buttons"></button>';
     html += insertHtml(str, i);
 }
 document.getElementById("container").innerHTML = html;
@@ -50,7 +54,7 @@ document.getElementById("container").innerHTML = html;
 
 // Responding to clicks
 let count = 0;
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll(".buttons");
 for(let i of buttons) {
     i.addEventListener("click", () => {
         if(count<9 && i.textContent=="") {
