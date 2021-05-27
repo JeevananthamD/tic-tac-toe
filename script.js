@@ -4,10 +4,6 @@ function insertHtml(str, value) { // inserting buttons
     return str;
 }
 
-function restart() {
-    window.location.reload();
-}
-
 function check(buttons, count) { // checking for result
     let a = [];
     for(let i=0;i<9;i++) {
